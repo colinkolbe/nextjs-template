@@ -1,26 +1,122 @@
 @import "tailwindcss";
+@plugin "daisyui/theme" {
+	name: "night_adapted";
+	default: true;
+	prefersdark: true;
+	color-scheme: "dark"; /* color of browser-provided UI */
+	--color-base-100: oklch(26% 0.039 265.754);
+	--color-base-200: oklch(20% 0.037 265.754);
+	--color-base-300: oklch(16% 0.034 265.754);
+	--color-base-content: oklch(84.153% 0.007 265.754);
+	--color-primary: oklch(75.351% 0.138 232.661);
+	--color-primary-content: oklch(15.07% 0.027 232.661);
+	--color-secondary: oklch(68.011% 0.158 276.934);
+	--color-secondary-content: oklch(13.602% 0.031 276.934);
+	--color-accent: oklch(72.36% 0.176 350.048);
+	--color-accent-content: oklch(14.472% 0.035 350.048);
+	--color-neutral: oklch(27.949% 0.036 260.03);
+	--color-neutral-content: oklch(85.589% 0.007 260.03);
+	--color-info: oklch(68.455% 0.148 237.251);
+	--color-info-content: oklch(0% 0 0);
+	--color-success: oklch(78.452% 0.132 181.911);
+	--color-success-content: oklch(15.69% 0.026 181.911);
+	--color-warning: oklch(83.242% 0.139 82.95);
+	--color-warning-content: oklch(16.648% 0.027 82.95);
+	--color-error: oklch(71.785% 0.17 13.118);
+	--color-error-content: oklch(14.357% 0.034 13.118);
+	--radius-selector: 1rem;
+	--radius-field: 0.5rem;
+	--radius-box: 1rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 0;
+	--noise: 0;
+}
+@plugin "daisyui" {
+	themes:
+		/* silk,
+		nord,
+		caramellatte,
+		lemonade, */
+		emerald,
+		retro,
+		night_adapted --default;
+	root: ":root";
+	include:;
+	exclude:;
+	/* prefix: "d-"; */
+	logs: true;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #890101ff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #999999;
+		--foreground: #ededed;
+	}
+}
+
+html {
+	background-color: #0f172a !important;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.bggradient {
+	background: rgb(12, 74, 110);
+	background: -moz-linear-gradient(
+		/* 315deg, */ rgba(12, 74, 110, 1) 22%,
+		rgba(15, 23, 42, 1) 54%
+	);
+	background: -webkit-linear-gradient(
+		/* 315deg, */ rgba(12, 74, 110, 1) 22%,
+		rgba(15, 23, 42, 1) 54%
+	);
+	background: linear-gradient(
+		/* 315deg, */ rgba(12, 74, 110, 1) 22%,
+		rgba(15, 23, 42, 1) 54%
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0c4a6e",endColorstr="#0f172a",GradientType=1);
+}
+
+.btn-ghost {
+	text-transform: none;
+}
+
+.btn-black {
+	@apply btn btn-ghost btn-md text-base-content hover:bg-base-100 hover:border-success bg-base-300 mb-3 rounded-lg;
+}
+
+.btn-secondary {
+	@apply btn btn-ghost btn-md bg-secondary text-secondary-content hover:bg-accent-content mb-3 rounded-lg;
+}
+
+.link-btn {
+	@apply bg-base-300 text-base-content hover:bg-base-100 hover:border-success m-auto mb-3 flex h-12 flex-col justify-center rounded-lg text-center text-lg font-semibold hover:border-2;
+}
+
+/* Code Boxes Related */
+code.hljs {
+	border-radius: 7px !important;
+}
+
+code {
+	text-wrap: balance;
+	overflow-wrap: break-word;
 }

@@ -1,0 +1,56 @@
+{
+	"Header": {
+		"": "Home",
+		"abc": "Abc",
+		"title": "PAGE_TITLE"
+	},
+	"Footer": {
+		"info": "PAGE_TITLE"
+	},
+	"NotFound": {
+		"title": "PAGE_TITLE",
+		"404_message": "404 - Page not found"
+	},
+	"Auth": {
+		"Login": {
+			"title": "Login",
+			"username": "Username",
+			"password": "Password",
+			"submit": "Login",
+			"error": "{error, select, CredentialsSignin {Invalid username or password} other {Unknown error}}",
+			"invalidLoginData": "Invalid Login Data",
+			"resetPW": "Reset password",
+			"signUp": "Sign up",
+			"signIn": "Sign in"
+		},
+		"ResetPassword": {
+			"title": "Reset Password"
+		},
+		"SignUp": {
+			"title": "Sign Up"
+		},
+		"ResendEmail": {
+			"title": "Resend Email"
+		}
+	},
+	"Index": {
+		"title": "Home",
+		"loggedIn": "Logged in as {username}",
+		"loggedOut": "You are logged out.",
+		"login": "Login",
+		"logout": "Logout",
+		"404": "404-Page"
+	},
+	"CookieBanner": {
+		"title": "🍪 Cookie Notice",
+		"message": "We use cookies to ensure that we give you the best experience on our website.",
+		"acknowledge": "Accept",
+		"cookie-policy": "Read cookies policies",
+		"manage-preferences": "Manage your preferences"
+	},
+	"LocaleSwitcher": {
+		"__comment__": "The swap between the two locales is wanted.",
+		"de": "🇺🇸",
+		"en": "🇩🇪"
+	}
+}

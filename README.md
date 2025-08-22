@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Basic Nextjs Template
 
-## Getting Started
+## Tools & Dependencies
+- Framework: _Nextjs_
+- CSS: _Tailwind_, _DaisyUI_, _Heroicons_
+    - _theme-change_ + DaisyUI for dark-mode toggle (multiple themes are possible)
+- Linting: _ESLint_, _Prettier_
+- Auth: _next-auth_ (future: _auth.js_ which is currently still in beta)
+- Internationalization: _next-intl_
+- Logging: _winston_
+- Analytics: _analytics_
+- Testing: _playwright, jest_
 
-First, run the development server:
-
+# Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Recommended to use bun
+# First, consider updating all dependencies to the latest version via
+bun update
+# Dev env
+bun install
+bun run dev
+# Prod env
+bun run build; bun run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add `.env.local`
+```bash
+# PORT=""
+# PROJECT_PRODUCTION_URL=""
+NEXTAUTH_URL="" # CHANGE, e.g., "http://localhost:3000"
+AUTH_SECRET="" # CHANGE
+```
